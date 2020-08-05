@@ -3,453 +3,172 @@ using System.Data;
 
 namespace Atsam
 {
-    public abstract class _Table
+    public abstract class Table
     {
-        protected int _PK_TableCode;
-        protected string _TableName;
-        protected string _Alias;
-        protected string _Caption;
-        protected int _FK_TableTypeCode;
-        protected string _Description;
-        protected Boolean _Visible;
-        protected int _FK_ParentTableCode;
-        protected int _FK_FieldsTableCode;
-        protected int _Rank;
-        protected string _LinkPage;
-        protected string _Filter;
-        protected string _Order;
+        public int PK_TableCode { get; set; }
 
-        protected FormStatus _FormStatus;
-        protected TableStatus _TableStatus;
-        protected Boolean _IsCancelled;
-        protected string _ReturnValue;
-        protected Boolean[] _Permission = new Boolean[System.Enum.GetValues(typeof(Atsam.Action)).Length];
+        public string TableName { get; set; }
 
-        public _Field __Field;
+        public string Alias { get; set; }
 
-        public DataRow drParent = null;
+        public string Caption { get; set; }
 
-        public _Table(DataRow drDataRow, FormStatus fsFormStatus = FormStatus.fsMain)
+        public int FK_TableTypeCode { get; set; }
+
+        public string Description { get; set; }
+
+        public bool Visible { get; set; }
+
+        public int FK_ParentTableCode { get; set; }
+
+        public int FK_FieldsTableCode { get; set; }
+
+        public int Rank { get; set; }
+
+        public string LinkPage { get; set; }
+
+        public string Filter { get; set; }
+
+        public string Order { get; set; }
+
+
+
+        public FormStatus FormStatus { get; set; }
+        public TableStatus TableStatus { get; set; }
+        public Boolean IsCancelled { get; set; }
+        public string ReturnValue { get; set; }
+        public Boolean[] Permission { get; set; }
+        public Field _Field { get; set; }
+        public DataRow drParent { get; set; }
+
+        public Table(DataRow drDataRow, FormStatus fsFormStatus = FormStatus.fsMain)
         {
-            _PK_TableCode = Convert.ToInt32(drDataRow["PK_TableCode"].ToString());
-            _TableName = drDataRow["TableName"].ToString();
-            _Alias = drDataRow["Alias"].ToString();
-            _Caption = drDataRow["Caption"].ToString();
-            _FK_TableTypeCode = Convert.ToInt32(drDataRow["FK_TableTypeCode"].ToString());
-            _Description = drDataRow["Description"].ToString();
-            _Visible = Convert.ToBoolean(drDataRow["Visible"].ToString());
-            _FK_ParentTableCode = Convert.ToInt32(drDataRow["FK_ParentTableCode"].ToString());
-            _FK_FieldsTableCode = Convert.ToInt32(drDataRow["FK_FieldsTableCode"].ToString());
-            _Rank = Convert.ToInt32(drDataRow["Rank"].ToString());
-            _LinkPage = drDataRow["LinkPage"].ToString();
-            _Filter = drDataRow["Filter"].ToString();
+            PK_TableCode = Convert.ToInt32(drDataRow["PK_TableCode"].ToString());
+            TableName = drDataRow["TableName"].ToString();
+            Alias = drDataRow["Alias"].ToString();
+            Caption = drDataRow["Caption"].ToString();
+            FK_TableTypeCode = Convert.ToInt32(drDataRow["FK_TableTypeCode"].ToString());
+            Description = drDataRow["Description"].ToString();
+            Visible = Convert.ToBoolean(drDataRow["Visible"].ToString());
+            FK_ParentTableCode = Convert.ToInt32(drDataRow["FK_ParentTableCode"].ToString());
+            FK_FieldsTableCode = Convert.ToInt32(drDataRow["FK_FieldsTableCode"].ToString());
+            Rank = Convert.ToInt32(drDataRow["Rank"].ToString());
+            LinkPage = drDataRow["LinkPage"].ToString();
+            Filter = drDataRow["Filter"].ToString();
+            Permission = new Boolean[System.Enum.GetValues(typeof(Atsam.Action)).Length];
 
-            _FormStatus = fsFormStatus;
-            _TableStatus = TableStatus.tsNone;
-            _IsCancelled = false;
-            _ReturnValue = string.Empty;
-            _Order = string.Empty;
+            FormStatus = fsFormStatus;
+            TableStatus = TableStatus.tsNone;
+            IsCancelled = false;
+            ReturnValue = string.Empty;
+            Order = string.Empty;
 
-            _Permission = AUser._Permission.GetPermission(AUser.WorkGroupCode, PK_TableCode);
+            Permission = AUser._Permission.GetPermission(AUser.WorkGroupCode, PK_TableCode);
+        }
+        public abstract void SetField();
+
+        public Table Copy()
+        {
+            return ((Table)this.MemberwiseClone());
         }
 
-        public _Table Copy()
+        public Boolean getPermission(Atsam.Action aAction)
         {
-            return ((_Table)this.MemberwiseClone());
+            return Permission[(int)aAction];
         }
-
-        public Boolean Permission(Atsam.Action aAction)
-        {
-            return _Permission[(int)aAction];
-        }
-        #region Properties
-
-        public int PK_TableCode
-        {
-            get
-            {
-                return _PK_TableCode;
-            }
-        }
-
-        public string TableName
-        {
-            get
-            {
-                return _TableName;
-            }
-        }
-
-        public string Alias
-        {
-            get
-            {
-                return _Alias;
-            }
-        }
-
-        public string Caption
-        {
-            get
-            {
-                return _Caption;
-            }
-        }
-
-        public int FK_TableTypeCode
-        {
-            get
-            {
-                return _FK_TableTypeCode;
-            }
-        }
-
-        public string Description
-        {
-            get
-            {
-                return _Description;
-            }
-            set
-            {
-                _Description = value;
-            }
-        }
-
-        public Boolean Visible
-        {
-            get
-            {
-                return _Visible;
-            }
-        }
-
-        public int FK_ParentTableCode
-        {
-            get
-            {
-                return _FK_ParentTableCode;
-            }
-        }
-
-        public int FK_FieldsTableCode
-        {
-            get
-            {
-                return _FK_FieldsTableCode;
-            }
-        }
-
-        public int Rank
-        {
-            get
-            {
-                return _Rank;
-            }
-        }
-
-        public string LinkPage
-        {
-            get
-            {
-                return _LinkPage;
-            }
-        }
-
-        public string Filter
-        {
-            get
-            {
-                return (_Filter);
-            }
-            set
-            {
-                _Filter = value;
-            }
-        }
-
-        public FormStatus FormStatus
-        {
-            get
-            {
-                return _FormStatus;
-            }
-        }
-
-        public TableStatus TableStatus
-        {
-            get
-            {
-                return _TableStatus;
-            }
-
-            set
-            {
-                _TableStatus = value;
-            }
-        }
-
-        public Boolean IsCancelled
-        {
-            get
-            {
-                return _IsCancelled;
-            }
-
-            set
-            {
-                _IsCancelled = value;
-            }
-        }
-
-        public string ReturnValue
-        {
-            get
-            {
-                return _ReturnValue;
-            }
-
-            set
-            {
-                _ReturnValue = value;
-            }
-        }
-
-        public string Order
-        {
-            get
-            {
-                return _Order;
-            }
-
-            set
-            {
-                _Order = value;
-            }
-        }
-
-        #endregion
     }
 
-    public abstract class _Field
+    public class Field
     {
-        protected int _pk_FKTableCode;
-        protected int _pk_FieldCode;
-        protected string _FieldName;
-        protected string _Caption;
-        protected int _FK_KeyTypeCode;
-        protected int _FK_FieldTypeCode;
-        protected int _FK_FieldOperationCode;
-        protected int _FieldLength;
-        protected Boolean _Required;
-        protected string _DefaultValue;
-        protected Boolean _Visible;
-        protected Boolean _Enabled;
-        protected string _Description;
-        protected string _LookupSQL;
-        protected string _MasterReferenceField;
+        public int pk_FKTableCode { get; set; }
 
-        private string _Value;
-        private Boolean _Active = false;
-        private DataTable _DataTable;
+        public int pk_FieldCode { get; set; }
+
+        public string FieldName { get; set; }
+
+        public string Caption { get; set; }
+
+        public int FK_KeyTypeCode { get; set; }
+
+        public int FK_FieldTypeCode { get; set; }
+
+        public int FK_FieldOperationCode { get; set; }
+
+        public string FieldLength { get; set; }
+
+        public bool Required { get; set; }
+
+        public string DefaultValue { get; set; }
+
+        public bool Visible { get; set; }
+
+        public bool Enabled { get; set; }
+
+        public string Description { get; set; }
+
+        public string LookupSQL { get; set; }
+
+        public string MasterReferenceField { get; set; }
+
+        public string Value { get; set; }
+        public Boolean Active { get; set; }
+        public DataTable FieldTable { get; }
+
+        public Field(DataTable dtFields)
+        {
+            this.FieldTable = dtFields;
+            if (FieldTable.Rows.Count > 0)
+            {
+                SetDataField(1);
+                Active = true;
+            }
+        }
 
         public void SetDataField(int intFieldCode)
         {
-            DataRow[] drDataRow = _DataTable.Select("pk_FieldCode = " + intFieldCode.ToString());
+            DataRow[] drDataRow = FieldTable.Select("pk_FieldCode = " + intFieldCode.ToString());
             if (drDataRow.Length == 1)
             {
-                _pk_FKTableCode = Convert.ToInt32(drDataRow[0]["pk_FkTableCode"].ToString());
-                _pk_FieldCode = Convert.ToInt32(drDataRow[0]["pk_FieldCode"].ToString());
-                _FieldName = drDataRow[0]["FieldName"].ToString();
-                _Caption = drDataRow[0]["Caption"].ToString();
-                _FK_KeyTypeCode = Convert.ToInt32(drDataRow[0]["FK_KeyTypeCode"].ToString());
-                _FK_FieldTypeCode = Convert.ToInt32(drDataRow[0]["FK_FieldTypeCode"].ToString());
-                _FK_FieldOperationCode = Convert.ToInt32(drDataRow[0]["FK_FieldOperationCode"].ToString());
-                _FieldLength = Convert.ToInt32(drDataRow[0]["FieldLength"].ToString());
-                _Required = (drDataRow[0]["Required"].ToString() == string.Empty) ? false : Convert.ToBoolean(drDataRow[0]["Required"].ToString());
-                _DefaultValue = drDataRow[0]["DefaultValue"].ToString();
-                _Visible = (drDataRow[0]["Visible"].ToString() == string.Empty) ? false : Convert.ToBoolean(drDataRow[0]["Visible"].ToString());
-                _Enabled = (drDataRow[0]["Enabled"].ToString() == string.Empty) ? false : Convert.ToBoolean(drDataRow[0]["Enabled"].ToString());
-                _Description = drDataRow[0]["Description"].ToString();
-                _LookupSQL = drDataRow[0]["LookupSQL"].ToString();
-                _MasterReferenceField = drDataRow[0]["MasterReferenceField"].ToString();
+                pk_FKTableCode = Convert.ToInt32(drDataRow[0]["pk_FkTableCode"].ToString());
+                pk_FieldCode = Convert.ToInt32(drDataRow[0]["pk_FieldCode"].ToString());
+                FieldName = drDataRow[0]["FieldName"].ToString();
+                Caption = drDataRow[0]["Caption"].ToString();
+                FK_KeyTypeCode = Convert.ToInt32(drDataRow[0]["FK_KeyTypeCode"].ToString());
+                FK_FieldTypeCode = Convert.ToInt32(drDataRow[0]["FK_FieldTypeCode"].ToString());
+                FK_FieldOperationCode = Convert.ToInt32(drDataRow[0]["FK_FieldOperationCode"].ToString());
+                FieldLength = drDataRow[0]["FieldLength"].ToString();
+                Required = (drDataRow[0]["Required"].ToString() == string.Empty) ? false : Convert.ToBoolean(drDataRow[0]["Required"].ToString());
+                DefaultValue = drDataRow[0]["DefaultValue"].ToString();
+                Visible = (drDataRow[0]["Visible"].ToString() == string.Empty) ? false : Convert.ToBoolean(drDataRow[0]["Visible"].ToString());
+                Enabled = (drDataRow[0]["Enabled"].ToString() == string.Empty) ? false : Convert.ToBoolean(drDataRow[0]["Enabled"].ToString());
+                Description = drDataRow[0]["Description"].ToString();
+                LookupSQL = drDataRow[0]["LookupSQL"].ToString();
+                MasterReferenceField = drDataRow[0]["MasterReferenceField"].ToString();
             }
         }
 
         public void SetDataField(string strFiledName)
         {
-            DataRow[] drDataRow = _DataTable.Select("FieldName = '" + strFiledName.Trim() + "'");
+            DataRow[] drDataRow = FieldTable.Select("FieldName = '" + strFiledName.Trim() + "'");
             if (drDataRow.Length == 1)
             {
-                _pk_FKTableCode = Convert.ToInt32(drDataRow[0]["pk_FkTableCode"].ToString());
-                _pk_FieldCode = Convert.ToInt32(drDataRow[0]["pk_FieldCode"].ToString());
-                _FieldName = drDataRow[0]["FieldName"].ToString();
-                _Caption = drDataRow[0]["Caption"].ToString();
-                _FK_KeyTypeCode = Convert.ToInt32(drDataRow[0]["FK_KeyTypeCode"].ToString());
-                _FK_FieldTypeCode = Convert.ToInt32(drDataRow[0]["FK_FieldTypeCode"].ToString());
-                _FK_FieldOperationCode = Convert.ToInt32(drDataRow[0]["FK_FieldOperationCode"].ToString());
-                _FieldLength = Convert.ToInt32(drDataRow[0]["FieldLength"].ToString());
-                _Required = Convert.ToBoolean(drDataRow[0]["Required"].ToString());
-                _DefaultValue = drDataRow[0]["DefaultValue"].ToString();
-                _Visible = Convert.ToBoolean(drDataRow[0]["Visible"].ToString());
-                _Enabled = Convert.ToBoolean(drDataRow[0]["Enabled"].ToString());
-                _Description = drDataRow[0]["Description"].ToString();
-                _LookupSQL = drDataRow[0]["LookupSQL"].ToString();
-                _MasterReferenceField = drDataRow[0]["MasterReferenceField"].ToString();
+                pk_FKTableCode = Convert.ToInt32(drDataRow[0]["pk_FkTableCode"].ToString());
+                pk_FieldCode = Convert.ToInt32(drDataRow[0]["pk_FieldCode"].ToString());
+                FieldName = drDataRow[0]["FieldName"].ToString();
+                Caption = drDataRow[0]["Caption"].ToString();
+                FK_KeyTypeCode = Convert.ToInt32(drDataRow[0]["FK_KeyTypeCode"].ToString());
+                FK_FieldTypeCode = Convert.ToInt32(drDataRow[0]["FK_FieldTypeCode"].ToString());
+                FK_FieldOperationCode = Convert.ToInt32(drDataRow[0]["FK_FieldOperationCode"].ToString());
+                FieldLength = drDataRow[0]["FieldLength"].ToString();
+                Required = Convert.ToBoolean(drDataRow[0]["Required"].ToString());
+                DefaultValue = drDataRow[0]["DefaultValue"].ToString();
+                Visible = Convert.ToBoolean(drDataRow[0]["Visible"].ToString());
+                Enabled = Convert.ToBoolean(drDataRow[0]["Enabled"].ToString());
+                Description = drDataRow[0]["Description"].ToString();
+                LookupSQL = drDataRow[0]["LookupSQL"].ToString();
+                MasterReferenceField = drDataRow[0]["MasterReferenceField"].ToString();
             }
         }
 
-        #region Properties
-
-        public int pk_FKTableCode
-        {
-            get
-            {
-                return _pk_FKTableCode;
-            }
-        }
-
-        public int pk_FieldCode
-        {
-            get
-            {
-                return _pk_FieldCode;
-            }
-        }
-
-        public string FieldName
-        {
-            get
-            {
-                return _FieldName;
-            }
-        }
-
-        public string Caption
-        {
-            get
-            {
-                return _Caption;
-            }
-        }
-
-        public int FK_KeyTypeCode
-        {
-            get
-            {
-                return _FK_KeyTypeCode;
-            }
-        }
-
-        public int FK_FieldTypeCode
-        {
-            get
-            {
-                return _FK_FieldTypeCode;
-            }
-        }
-
-        public int FK_FieldOperationCode
-        {
-            get
-            {
-                return _FK_FieldOperationCode;
-            }
-        }
-
-        public int FieldLength
-        {
-            get
-            {
-                return _FieldLength;
-            }
-        }
-
-        public Boolean Required
-        {
-            get
-            {
-                return _Required;
-            }
-        }
-
-        public string DefaultValue
-        {
-            get
-            {
-                return _DefaultValue;
-            }
-        }
-
-        public Boolean Visible
-        {
-            get
-            {
-                return _Visible;
-            }
-        }
-
-        public Boolean Enabled
-        {
-            get
-            {
-                return _Enabled;
-            }
-        }
-
-        public string Description
-        {
-            get
-            {
-                return _Description;
-            }
-        }
-
-        public string LookupSQL
-        {
-            get
-            {
-                return _LookupSQL;
-            }
-        }
-
-        public string MasterReferenceField
-        {
-            get
-            {
-                return _MasterReferenceField;
-            }
-        }
-
-        public Boolean Active
-        {
-            get
-            {
-                return _Active;
-            }
-        }
-
-        public DataTable DataTable
-        {
-            get
-            {
-                return _DataTable;
-            }
-        }
-
-        public string Value
-        {
-            get
-            {
-                return _Value;
-            }
-
-            set
-            {
-                _Value = value;
-            }
-        }
-
-        #endregion
     }
 }

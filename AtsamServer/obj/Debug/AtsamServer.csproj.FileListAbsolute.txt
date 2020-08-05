@@ -1,0 +1,15 @@
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\AtsamServer.exe
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\AtsamServer.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\Atsam.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\BusinessFacadeLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\ServerCommonLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\BusinessRuleLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\DataAccessLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\Atsam.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\BusinessFacadeLayer.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\ServerCommonLayer.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\BusinessRuleLayer.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\bin\Debug\DataAccessLayer.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\obj\Debug\AtsamServer.csprojResolveAssemblyReference.cache
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\obj\Debug\AtsamServer.exe
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\AtsamServer\obj\Debug\AtsamServer.pdb

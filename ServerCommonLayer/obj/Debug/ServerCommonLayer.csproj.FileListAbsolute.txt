@@ -1,0 +1,9 @@
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\bin\Debug\ServerCommonLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\bin\Debug\ServerCommonLayer.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\bin\Debug\Atsam.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\bin\Debug\Atsam.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.csprojResolveAssemblyReference.cache
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.Server.resources
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.csproj.GenerateResource.Cache
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.pdb

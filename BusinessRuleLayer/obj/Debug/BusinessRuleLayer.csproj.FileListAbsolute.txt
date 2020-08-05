@@ -1,0 +1,11 @@
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\BusinessRuleLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\BusinessRuleLayer.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\Atsam.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\ServerCommonLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\Atsam.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\ServerCommonLayer.pdb
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.csprojResolveAssemblyReference.cache
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.dll
+C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.pdb
