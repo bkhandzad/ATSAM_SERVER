@@ -46,7 +46,10 @@
     <Compile Include="ADAL.cs" />
     <Compile Include="ISCL.cs" />
     <Compile Include="ISA.cs" />
+    <Compile Include="APermission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System.cs" />
+    <Compile Include="AUser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
