@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
-using System.Threading.Tasks;
+using Macro;
 
-namespace Atsam
+namespace Atsam.Server
 {
     public abstract class ABRL
     {
@@ -20,7 +19,7 @@ namespace Atsam
 
         public abstract Boolean[] GetPermission(int intWorkGroupCode, int intTableCode);
 
-        public abstract SqlException Logging(int intUserCode, int intTableCode, Action aAction, string strIP);
+        public abstract SqlException Logging(int intUserCode, int intTableCode, Macro.Action aAction, string strIP);
 
         public abstract ErrorCode CreateUser(string strUserID, string strPassword, ref int intUserCode, ref string strUserName, ref int intWorkGroupCode, ref string strWorkGroup, ref int intWorkStationCode, ref string strWorkStation, ref Boolean IsUserChanged, ref UserType utUserType, string strIP);
     }

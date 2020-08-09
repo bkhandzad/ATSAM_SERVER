@@ -1,4 +1,6 @@
 ﻿using Atsam;
+using Macro;
+using Atsam.Server;
 using ServerCommonLayer;
 using System.Data;
 using System.Data.SqlClient;

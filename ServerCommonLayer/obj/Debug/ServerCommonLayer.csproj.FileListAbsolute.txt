@@ -7,3 +7,12 @@ C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\obj\Deb
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.csproj.GenerateResource.Cache
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.dll
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.pdb
+D:\Project\atsam\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.csprojResolveAssemblyReference.cache
+D:\Project\atsam\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.Server.resources
+D:\Project\atsam\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.csproj.GenerateResource.Cache
+D:\Project\atsam\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.dll
+D:\Project\atsam\ATSAM_SERVER\ServerCommonLayer\obj\Debug\ServerCommonLayer.pdb
+D:\Project\atsam\ATSAM_SERVER\ServerCommonLayer\bin\Debug\ServerCommonLayer.dll
+D:\Project\atsam\ATSAM_SERVER\ServerCommonLayer\bin\Debug\ServerCommonLayer.pdb
+D:\Project\atsam\ATSAM_SERVER\ServerCommonLayer\bin\Debug\Atsam.dll
+D:\Project\atsam\ATSAM_SERVER\ServerCommonLayer\bin\Debug\Atsam.pdb

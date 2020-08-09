@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Macro.cs" />
-    <Compile Include="ABRL.cs" />
-    <Compile Include="IBFL.cs" />
-    <Compile Include="ADAL.cs" />
-    <Compile Include="ISCL.cs" />
+    <Compile Include="Server\Macro.cs" />
+    <Compile Include="Server\ABRL.cs" />
+    <Compile Include="Server\ABFL.cs" />
+    <Compile Include="Server\ADAL.cs" />
+    <Compile Include="Server\ISCL.cs" />
     <Compile Include="ISA.cs" />
     <Compile Include="APermission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

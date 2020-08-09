@@ -7,7 +7,7 @@ using System.Runtime.Remoting.Channels.Http;
 
 using BusinessFacadeLayer;
 using ServerCommonLayer;
-using Atsam;
+using Macro;
 
 namespace AtsamServer
 {

@@ -1,4 +1,6 @@
-﻿namespace Atsam
+﻿using Macro;
+
+namespace Atsam
 {
     // Server Administrator
     public interface ISA

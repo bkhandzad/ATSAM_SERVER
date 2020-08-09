@@ -1,8 +1,7 @@
 ﻿using Atsam;
+using Macro;
+using Atsam.Server;
 using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -56,8 +55,8 @@ namespace BusinessRuleLayer
             if (erErrorCode == ErrorCode.ecNone)
             {
                 if ((IsUserChanged == true) && (intOldUserCode > 0))
-                    Logging(intOldUserCode, intWorkStationCode, Atsam.Action.aLogOut, strIP);
-                Logging(intUserCode, intWorkStationCode, Atsam.Action.aLogIn, strIP);
+                    Logging(intOldUserCode, intWorkStationCode, Macro.Action.aLogOut, strIP);
+                Logging(intUserCode, intWorkStationCode, Macro.Action.aLogIn, strIP);
             }
             return (erErrorCode);
         }
@@ -86,7 +85,7 @@ namespace BusinessRuleLayer
 
         public override bool[] GetPermission(int intWorkGroupCode, int intTableCode)
         {
-            Boolean[] Permission = new Boolean[System.Enum.GetValues(typeof(Atsam.Action)).Length];
+            Boolean[] Permission = new Boolean[System.Enum.GetValues(typeof(Macro.Action)).Length];
             DataTable dtDataTable = new DataTable();
             switch (intWorkGroupCode)
             {
@@ -150,7 +149,7 @@ namespace BusinessRuleLayer
             return (false);
         }
 
-        public override SqlException Logging(int intUserCode, int intTableCode, Atsam.Action aAction, string strIP)
+        public override SqlException Logging(int intUserCode, int intTableCode, Macro.Action aAction, string strIP)
         {
             if (intUserCode > 0)
             {

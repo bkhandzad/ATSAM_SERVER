@@ -1,4 +1,6 @@
 ﻿using Atsam;
+using Macro;
+using Atsam.Server;
 using System;
 using System.Resources;
 using System.Reflection;

@@ -1,4 +1,6 @@
 ﻿using Atsam;
+using Atsam.Server;
+using Macro;
 using System;
 using Microsoft.Win32;
 

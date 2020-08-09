@@ -1,4 +1,4 @@
-﻿namespace Atsam
+﻿namespace Macro
 {
     public enum ErrorCode
     {

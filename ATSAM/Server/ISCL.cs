@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
+using Macro;
 
-namespace Atsam
+namespace Atsam.Server
 {
     // Server Common Layer
     public interface ISCL

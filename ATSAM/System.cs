@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using Macro;
 
 namespace Atsam
 {
@@ -55,7 +56,7 @@ namespace Atsam
             Rank = Convert.ToInt32(drDataRow["Rank"].ToString());
             LinkPage = drDataRow["LinkPage"].ToString();
             Filter = drDataRow["Filter"].ToString();
-            Permission = new Boolean[System.Enum.GetValues(typeof(Atsam.Action)).Length];
+            Permission = new Boolean[System.Enum.GetValues(typeof(Macro.Action)).Length];
 
             FormStatus = fsFormStatus;
             TableStatus = TableStatus.tsNone;
@@ -72,7 +73,7 @@ namespace Atsam
             return ((Table)this.MemberwiseClone());
         }
 
-        public Boolean getPermission(Atsam.Action aAction)
+        public Boolean getPermission(Macro.Action aAction)
         {
             return Permission[(int)aAction];
         }
