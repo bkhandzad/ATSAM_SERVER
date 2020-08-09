@@ -1,6 +1,6 @@
 ﻿using Macro;
 
-namespace Atsam
+namespace Atsam.Server
 {
     // Server Administrator
     public interface ISA

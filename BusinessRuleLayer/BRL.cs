@@ -29,7 +29,7 @@ namespace BusinessRuleLayer
                 strUserName = pSCL.GetResourceString("strServerAdministrator");
                 intWorkGroupCode = 0;
                 strWorkGroup = string.Empty;
-                intWorkStationCode = 0;
+                intWorkStationCode = 1;
                 strWorkStation = string.Empty;
                 utUserType = UserType.utServerAdministrator;
             }
