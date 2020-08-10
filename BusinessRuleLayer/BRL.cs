@@ -180,5 +180,27 @@ namespace BusinessRuleLayer
             }
             return (null);
         }
+        
+        public override Int32 GetPartnerCode(PartnerType ptPartnerType)
+        {
+            try
+            {
+                var obj = pDAL.ExecuteScalar("SELECT MAX(PK_PartnerCode) PartnerCode FROM m_Partner WHERE FK_PartnerTypeCode = " + (int)ptPartnerType);
+                if (obj.ToString().Equals(String.Empty))
+                {
+                    switch (ptPartnerType)
+                    {
+                        case PartnerType.ptEmployee: return 10;
+                        case PartnerType.ptSupplier: return 1000;
+                        case PartnerType.ptCustomer: return 10000;
+                    }
+                }
+                return Convert.ToInt32(obj);
+            }
+            catch
+            {
+                return -1;
+            }
+        }
     }
 }

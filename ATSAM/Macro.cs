@@ -143,13 +143,11 @@
         ftXML = 241
     }
 
-    public enum DocumentType
+    public enum PartnerType
     {
-        dtNone = 0,
-        dtReceipt = 1,
-        dtBill = 2,
-        dtApproval = 3,
-        dtLicense = 4
+        ptCustomer = 1,
+        ptSupplier = 2,
+        ptEmployee = 3
     }
 
     public enum DocumentStatus

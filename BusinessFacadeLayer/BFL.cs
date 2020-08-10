@@ -16,8 +16,7 @@ namespace BusinessFacadeLayer
             this.pBRL = new BRL();
             this.pCL = new SCL();
         }
-
-
+        
         public override SqlException GetDataTable(ref DataTable dtDataTable, string strTableName)
         {
             return (pBRL.GetDataTable(ref dtDataTable, strTableName));
