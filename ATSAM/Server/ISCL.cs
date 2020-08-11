@@ -19,6 +19,10 @@ namespace Atsam.Server
 
         string GetSolarTime(DateTime dtDateTime, char chrDivider = '\0');
 
+        int GetSolarDayOfYear();
+
+        int GetSolarDayOfYear(DateTime dtDateTime);
+
         string GetSolarDayOfWeek();
 
         string GetSolarDayOfWeek(DateTime dtDateTime);
@@ -26,10 +30,6 @@ namespace Atsam.Server
         string GetSolarDayOfWeekEnglish();
 
         DateTime GetDateTime(Boolean DateAndTime);
-
-        int GetSolarDayOfYear();
-
-        int GetSolarDayOfYear(DateTime dtDateTime);
 
         string GetErrorMessage(SqlException eSqlException, TableStatus tsTableStatus);
 

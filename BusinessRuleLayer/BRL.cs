@@ -1,5 +1,6 @@
 ﻿using Atsam;
 using Macro;
+using Atsam.Data;
 using Atsam.Server;
 using System;
 using System.Data;
@@ -185,14 +186,14 @@ namespace BusinessRuleLayer
         {
             try
             {
-                var obj = pDAL.ExecuteScalar("SELECT MAX(PK_PartnerCode) PartnerCode FROM m_Partner WHERE FK_PartnerTypeCode = " + (int)ptPartnerType);
+                var obj = pDAL.ExecuteScalar("SELECT MAX(PK_PartnerCode) + 1 PartnerCode FROM m_Partner WHERE FK_PartnerTypeCode = " + (int)ptPartnerType);
                 if (obj.ToString().Equals(String.Empty))
                 {
                     switch (ptPartnerType)
                     {
-                        case PartnerType.ptEmployee: return 10;
-                        case PartnerType.ptSupplier: return 1000;
-                        case PartnerType.ptCustomer: return 10000;
+                        case PartnerType.ptEmployee: return 11;
+                        case PartnerType.ptSupplier: return 1001;
+                        case PartnerType.ptCustomer: return 10001;
                     }
                 }
                 return Convert.ToInt32(obj);
@@ -200,6 +201,94 @@ namespace BusinessRuleLayer
             catch
             {
                 return -1;
+            }
+        }
+
+        public override SqlException InsertInvoice(ref Invoice iInvoice)
+        {
+            try
+            {
+                Int32 InvoiceID = Convert.ToInt32(pDAL.ExecuteScalar("SELECT ISNULL(MAX(PK_InvoiceID),0) + 1 InvoiceID FROM m_Invoice"));
+                iInvoice.PK_InvoiceID = InvoiceID;
+                foreach (InvoiceLine Line in iInvoice.Lines)
+                {
+                    Line.FK_InvoiceID = InvoiceID;
+                }
+                iInvoice.InvoiceCode = GenerateInvoiceCode(iInvoice.FK_InvoiceStateCode, iInvoice.FK_InvoiceTypeCode);
+                iInvoice.SolarDate = pSCL.GetSolarDate('/');
+                iInvoice.SolarTime = pSCL.GetSolarTime(':');
+                DataTable dtInvoice = new DataTable();
+                pDAL.GetDataTable(ref dtInvoice, "SELECT * FROM m_Invoice WHERE 1 = 0");
+                DataRow drInvoice = dtInvoice.NewRow();
+                drInvoice["PK_InvoiceID"] = iInvoice.PK_InvoiceID;
+                drInvoice["FK_InvoiceStateCode"] = (int)iInvoice.FK_InvoiceStateCode;
+                drInvoice["FK_InvoiceTypeCode"] = (int)iInvoice.FK_InvoiceTypeCode;
+                drInvoice["FK_PartnerCode"] = iInvoice.FK_PartnerCode;
+                drInvoice["InvoiceCode"] = iInvoice.InvoiceCode;
+                drInvoice["DeliverDate"] = iInvoice.DeliverDate;
+                drInvoice["InvoiceNumber"] = iInvoice.InvoiceNumber;
+                drInvoice["VATValue"] = iInvoice.VATValue;
+                drInvoice["Discount"] = iInvoice.Discount;
+                drInvoice["SolarDate"] = iInvoice.SolarDate;
+                drInvoice["SolarTime"] = iInvoice.SolarTime;
+                drInvoice["FK_UserID"] = iInvoice.FK_UserID;
+                dtInvoice.Rows.Add(drInvoice);
+                SqlException eSqlException = pDAL.SetDataTable(dtInvoice, "SELECT * FROM m_Invoice");
+                if (eSqlException == null)
+                {
+                    dtInvoice.AcceptChanges();
+                    DataTable dtInvoiceLine = new DataTable();
+                    pDAL.GetDataTable(ref dtInvoiceLine, "SELECT * FROM s_InvoiceLine WHERE 1 = 0");
+                    for (int i = 0; i < iInvoice.Lines.Count; i++)
+                    {
+                        DataRow drInvoiceLine = dtInvoiceLine.NewRow();
+                        drInvoiceLine["FK_InvoiceID"] = iInvoice.Lines[i].FK_InvoiceID;
+                        drInvoiceLine["FK_ProductCode"] = iInvoice.Lines[i].FK_ProductCode;
+                        drInvoiceLine["FK_DyeCode"] = iInvoice.Lines[i].FK_DyeCode;
+                        drInvoiceLine["Price"] = iInvoice.Lines[i].Price;
+                        dtInvoiceLine.Rows.Add(drInvoiceLine);
+                    }
+                    eSqlException = pDAL.SetDataTable(dtInvoice, "SELECT * FROM s_InvoiceLine");
+                    return (eSqlException);
+                }
+                else
+                    return eSqlException;
+            
+            }
+            catch
+            {
+                return (null);
+            }
+        }
+
+        public String GenerateInvoiceCode(InvoiceState isInvoiceState, InvoiceType itInvoiceType)
+        {
+            try
+            {
+                string strNNNN = GetInvoiceCode(isInvoiceState, itInvoiceType);
+                if (strNNNN == string.Empty)
+                    return (string.Empty);
+                string strRRR = ((int)itInvoiceType).ToString() + ((int)isInvoiceState).ToString().PadLeft(2, '0');
+                string strYY = pSCL.GetSolarDate().Trim().Substring(2, 2).Trim();
+                string strDDD = pSCL.GetSolarDayOfYear().ToString().PadLeft(3, '0');
+                String strInvoiceCode = strYY + strDDD + strRRR + strNNNN;
+                return strInvoiceCode;
+            }
+            catch
+            {
+                return (String.Empty);
+            }
+        }
+
+        private string GetInvoiceCode(InvoiceState isInvoiceState, InvoiceType itInvoiceType)
+        {
+            try
+            {
+                return (pDAL.ExecuteScalar("SELECT ISNULL(CAST(MAX(SUBSTRING(InvoiceCode, 9, 4)) AS Int),0) + 1 InvoiceID FROM m_Invoice WHERE SolarDate = '" + pSCL.GetSolarDate('/') + "' AND FK_InvoiceTypeCode = " + (int)itInvoiceType + "AND FK_InvoiceStateCode = " + (int)isInvoiceState).ToString().PadLeft(4, '0'));
+            }
+            catch
+            {
+                return (String.Empty);
             }
         }
     }

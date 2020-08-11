@@ -150,32 +150,17 @@
         ptEmployee = 3
     }
 
-    public enum DocumentStatus
+    public enum InvoiceState
     {
-        dsNone = 0,
-        dsUsual = 1,
-        dsReturn = 2
+        isNone = 0,
+        isUsual = 1,
+        isReturn = 2
     }
 
-    public enum DocumentOperation
+    public enum InvoiceType
     {
-        doNone = 0,
-        doAutomatic = 1,
-        doOnline = 2,
-        doOffline = 3
-    }
-
-    public enum DocumentDetailStatus
-    {
-        ddsNone = 0,
-        ddsAccept = 1,
-        ddsReject = 2,
-        ddsHold = 3
-    }
-
-    public enum OrderStatus
-    {
-        osAccept = 0,
-        osHold = 1
+        itNone = 0,
+        itSell = 1,
+        itPurchase = 2
     }
 }

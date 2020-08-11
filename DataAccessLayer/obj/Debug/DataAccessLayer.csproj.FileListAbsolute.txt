@@ -7,12 +7,12 @@ C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\DataAccessLayer\bin\Debug
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
-D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
-D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\obj\Debug\DataAccessLayer.dll
-D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
 D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\bin\Debug\DataAccessLayer.dll
 D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
 D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\bin\Debug\Atsam.dll
 D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\bin\Debug\ServerCommonLayer.dll
 D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\bin\Debug\Atsam.pdb
 D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\bin\Debug\ServerCommonLayer.pdb
+D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\Project\atsam\ATSAM_SERVER\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

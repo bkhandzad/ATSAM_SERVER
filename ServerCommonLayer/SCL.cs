@@ -143,7 +143,7 @@ namespace ServerCommonLayer
 
         public string GetSolarTime(char chrDivider = '\0')
         {
-            return GetSolarTime(DateTime.Today, chrDivider);
+            return GetSolarTime(DateTime.Now, chrDivider);
         }
 
         public string GetSolarTime(DateTime dtDateTime, char chrDivider = '\0')

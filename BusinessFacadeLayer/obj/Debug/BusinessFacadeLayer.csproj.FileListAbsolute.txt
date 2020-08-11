@@ -11,9 +11,6 @@ C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessFacadeLayer\bin\D
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessFacadeLayer\obj\Debug\BusinessFacadeLayer.csprojResolveAssemblyReference.cache
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessFacadeLayer\obj\Debug\BusinessFacadeLayer.dll
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessFacadeLayer\obj\Debug\BusinessFacadeLayer.pdb
-D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\obj\Debug\BusinessFacadeLayer.csprojResolveAssemblyReference.cache
-D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\obj\Debug\BusinessFacadeLayer.dll
-D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\obj\Debug\BusinessFacadeLayer.pdb
 D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\bin\Debug\BusinessFacadeLayer.dll
 D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\bin\Debug\BusinessFacadeLayer.pdb
 D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\bin\Debug\Atsam.dll
@@ -24,3 +21,6 @@ D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\bin\Debug\Atsam.pdb
 D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\bin\Debug\BusinessRuleLayer.pdb
 D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\bin\Debug\ServerCommonLayer.pdb
 D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\bin\Debug\DataAccessLayer.pdb
+D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\obj\Debug\BusinessFacadeLayer.csprojResolveAssemblyReference.cache
+D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\obj\Debug\BusinessFacadeLayer.dll
+D:\Project\atsam\ATSAM_SERVER\BusinessFacadeLayer\obj\Debug\BusinessFacadeLayer.pdb

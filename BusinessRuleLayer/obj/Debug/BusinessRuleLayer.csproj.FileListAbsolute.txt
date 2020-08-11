@@ -9,9 +9,6 @@ C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\bin\Deb
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.csprojResolveAssemblyReference.cache
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.dll
 C:\Users\bkhandzad\Source\Repos\bkhandzad\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.pdb
-D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.csprojResolveAssemblyReference.cache
-D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.dll
-D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.pdb
 D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\BusinessRuleLayer.dll
 D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\BusinessRuleLayer.pdb
 D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\Atsam.dll
@@ -20,3 +17,6 @@ D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\ServerCommonLayer.dll
 D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\Atsam.pdb
 D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\DataAccessLayer.pdb
 D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\bin\Debug\ServerCommonLayer.pdb
+D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.csprojResolveAssemblyReference.cache
+D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.dll
+D:\Project\atsam\ATSAM_SERVER\BusinessRuleLayer\obj\Debug\BusinessRuleLayer.pdb

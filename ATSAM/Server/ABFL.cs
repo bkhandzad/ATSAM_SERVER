@@ -32,6 +32,11 @@ namespace Atsam.Server
             return pBRL.GetPartnerCode(ptPartnerType);
         }
 
+        public SqlException InsertInvoice(ref Atsam.Data.Invoice iInvoice)
+        {
+            return pBRL.InsertInvoice(ref iInvoice);
+        }
+
         public string GetResourceString(string strString)
         {
             return (pCL.GetResourceString(strString));
